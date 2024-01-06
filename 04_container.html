@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Container</h2>
+    varaible may change through programm execution
+    <ol>
+        <li>var</li>
+        <li>let</li>
+    </ol>
+    constant container with fixed value
+    <ol>
+        <li>const</li>
+    </ol>
+
+    <h1>Differnece between let and var</h1>
+
+    <table>
+        <thead>
+        <tr>
+        <th>&nbsp;</th>
+        <th>
+        <p style="text-align:center;"><strong>var</strong></p>
+        </th>
+        <th>
+        <p style="text-align:center;">let</p>
+        </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td><strong>1.</strong></td>
+        <td>The var is a keyword that is used to declare a variable</td>
+        <td>The let is also a keyword that is used to declare a variable.</td>
+        </tr>
+        <tr>
+        <td><strong>2.</strong></td>
+        <td>
+        <p>Syntax -:</p>
+        <p><strong>var name = value;</strong></p>
+        </td>
+        <td>
+        <p>Syntax -:</p>
+        <p><strong>let name = value;</strong></p>
+        </td>
+        </tr>
+        <tr>
+        <td><strong>3.</strong></td>
+        <td>The variables that are defined with <strong>var </strong>statement have function scope.</td>
+        <td>The variables that are defined with <strong>let </strong>statement have block scope.</td>
+        </tr>
+        <tr>
+        <td><strong>4.</strong></td>
+        <td>We can declare a variable again even if it has been defined previously in the same scope.</td>
+        <td>We cannot declare a variable more than once if we defined that previously in the same scope.</td>
+        </tr>
+        <tr>
+        <td><strong>5.</strong></td>
+        <td>Hoisting is allowed with <strong>var</strong>.</td>
+        <td>Hoisting is not allowed with <strong>let</strong>.</td>
+        </tr>
+        <tr>
+        <td><strong>6.</strong></td>
+        <td>
+        <p>Example -:</p>
+        <p><strong>var websitename = “geeksforgeeks”;</strong></p>
+        </td>
+        <td>
+        <p>Example -:</p>
+        <p><strong>&nbsp;let x = 69;</strong></p>
+        </td>
+        </tr>
+        <tr>
+        <td><strong>7.</strong></td>
+        <td>var is an ECMAScript1 feature.</td>
+        <td>let is a feature of ES6.</td>
+        </tr>
+        <tr>
+        <td><strong>8.</strong></td>
+        <td>Its supported browsers are: Chrome, Internet Explorer, Microsoft Edge, Firefox, safari, opera</td>
+        <td>Its supported browsers are -: Chrome49, Microsoft Edge12, firefox44 , safari11, opera36</td>
+        </tr>
+        </tbody>
+        </table>
+
+
+    <script>
+        // let letData = "letData" // declaration with default value
+        // // let letData = "letData" // re-declaration with default value //Uncaught SyntaxError: Identifier 'letData' has already been declared
+        // console.log(letData);
+        // letData = "letData Change" // re-assignment
+        // console.log(letData);
+
+        // var varData = "varData"
+        // console.log(varData);
+        // var varData = "varData redeclaration"
+        // console.log(varData);
+        //  varData = "varData re-assignment"
+        // console.log(varData);
+        
+        
+        
+        
+        const constData = "constData"
+        // const constData = "constData test" //Uncaught SyntaxError: Identifier 'constData' has already been declared
+        // constData = "constData test" //Uncaught TypeError: Assignment to constant variable.
+        // console.log(constData);
+        // container = "container without let var const"
+        // console.log(container);
+        // console.table("console.table",container);
+
+        console.log(50 + 60);
+    </script>
+</body>
+
+</html>
