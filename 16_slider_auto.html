@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .active {
+
+            position: relative;
+            animation: mymove 5s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes mymove {
+            from {
+                left: 0px;
+            }
+
+            to {
+                left: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="img"><img src="nature_3.jpg" alt=""></div>
+        <div class="img"><img src="nature_4.jpg" alt=""></div>
+        <div class="img"><img src="nature_5.jpg" alt=""></div>
+        <div class="img"><img src="nature_1.jpg" alt=""></div>
+        <div class="img"><img src="nature_2.jpg" alt=""></div>
+    </div>
+
+    <script>
+
+
+        counter = 0;
+
+        function recure() {
+
+            img = document.getElementsByClassName("img")
+            for (i = 0; i < img.length; i++) {
+                // console.log(i)
+                img[i].style.display = "none";
+                img[i].classList.remove("active")
+            }
+
+
+
+            if (counter >= img.length) {
+                counter = 0;
+            }
+            console.log(counter);
+            img[counter].style.display = "block";
+            img[counter].classList.add("active")
+            counter++
+
+        }
+
+        recure()
+        setInterval(recure, 3000)
+    </script>
+</body>
+
+</html>

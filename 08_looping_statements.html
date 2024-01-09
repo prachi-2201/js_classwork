@@ -9,24 +9,97 @@
 
 <body>
 
+    <h1>Looping Statements</h1>
+    <h2>Different Kinds of Loops</h2>
+
+    <p>JavaScript supports different kinds of loops:</p>
+    <p>for - loops through a block of code a number of times</p>
+    <p>for/in - loops through the properties of an object</p>
+    <p>for/of - loops through the values of an iterable object</p>
+    <p>while - loops through a block of code while a specified condition is true</p>
+    <p>do/while - also loops through a block of code while a specified condition is true</p>
     <ol>
-        <li><h1>for(init;condition;incre/decr)</h1></li>
-        
+        <li>
+            <h2>For(init;condition;incre/decr)</h2>
+        </li>
         <h3> The for statement creates a loop with 3 optional expressions:</h3>
-        <code>for (expression 1; expression 2; expression 3) {
-            // code block to be executed
-          }</code>
         <ul>
             <li>Expression 1 is executed (one time) before the execution of the code block.</li>
             <li>Expression 2 defines the condition for executing the code block.</li>
             <li>Expression 3 is executed (every time) after the code block has been executed.</li>
         </ul>
-    
-        <li>while(consition)</li>
-        <li>arr.forEach(var)</li>
-        <li>for(let a in arr)</li>
-        <li>for(let a of arr)</li>
-        <li>do....while(consition)</li>
+        <p>Syntax : </p>
+        <code>for (expression 1; expression 2; expression 3) {
+            // code block to be executed
+          }</code>
+
+
+        <li>
+            <h2>For In Loop</h2>
+        </li>
+        <h3>The JavaScript for in statement loops through the properties of an Object:</h3>
+        <p>Syntax : </p>
+        <code>for (key in object) {
+            // code block to be executed
+          }</code>
+
+        <li>
+            <h2>For Of Loop</h2>
+        </li>
+        <h3>The JavaScript for of statement loops through the values of an iterable object.</h3>
+
+        <h3>It lets you loop over iterable data structures such as Arrays, Strings, Maps, NodeLists, and more:</h3>
+        <p>Syntax : </p>
+        <code>for (variable of iterable) {
+            // code block to be executed
+          }</code>
+        <p>variable - For every iteration the value of the next property is assigned to the variable. Variable can be
+            declared with const, let, or var.</p>
+        <p>iterable - An object that has iterable properties.</p>
+
+        <li>
+            <h2>While Loop</h2>
+        </li>
+        <h3>The while loop loops through a block of code as long as a specified condition is true.</h3>
+        <p>Syntax : </p>
+        <code>while (condition) {
+            // code block to be executed
+          }</code>
+
+        <li>
+            <h2>Do While Loop</h2>
+        </li>
+        <h3>The do while loop is a variant of the while loop. This loop will execute the code block once, before
+            checking if the condition is true, then it will repeat the loop as long as the condition is true.</h3>
+        <p>Syntax : </p>
+        <code>do {
+                // code block to be executed
+              }
+              while (condition);</code>
+
+
+
+
+        <li>
+            <h2>Array forEach()</h2>
+        </li>
+        <h3>The arr.forEach() method calls the provided function once for each element of the array. The provided
+            function may perform any kind of operation on the elements of the given array. </h3>
+        <p>Syntax : </p>
+        <code>array.forEach(callback(element, index, arr), thisValue);</code>
+
+        <p>Parameters:</p>
+        <p>This method accepts five parameters as mentioned above and described below:</p>
+
+        <ul>
+        <li>callback: This parameter holds the function to be called for each element of the array.</li>
+        <li>element: The parameter holds the value of the elements being processed currently.</li>
+        <li>index: This parameter is optional, it holds the index of the current value element in the array starting from 0.</li>
+        <li>array: This parameter is optional, it holds the complete array on which Array.every is called.</li>
+        <li>thisArg: This parameter is optional, it holds the context to be passed as this is to be used while executing the</li>
+        <li>callback function. If the context is passed, it will be used like this for each invocation of the callback</li>
+        <li>function, otherwise undefined is used as default.</li>
+        </ul>
     </ol>
 
 
@@ -41,38 +114,38 @@
         }
 
         MarksArr.forEach(element => {
-            console.log(element);
+            console.log("arrAY",element);
         });
-        let MarksObject = {"Eng":68,"Guj":70,"Maths":90,"Comp":100};
+        let MarksObject = { "Eng": 68, "Guj": 70, "Maths": 90, "Comp": 100 };
         // MarksObject.forEach(element => {
         //     console.log(element);
         // });
         for (const key in MarksObject) {
-            console.log("for in",key);
+            console.log("for in", key);
         }
         // for (const iterator of MarksObject) { //Uncaught TypeError: MarksObject is not iterable
         for (const iterator of MarksArr) { //Uncaught TypeError: MarksObject is not iterable
-            console.log("for of",iterator);
+            console.log("for of", iterator);
         }
 
-        data =0
-        
-        while (data<5) {
-            console.log("inside while",data);
+        data = 0
+
+        while (data < 5) {
+            console.log("inside while", data);
             data++
         }
-        
-        dowhiledata =0
+
+        dowhiledata = 0
         do {
-            console.log("inside do...while",dowhiledata);
+            console.log("inside do...while", dowhiledata);
             dowhiledata++;
-        } while (dowhiledata>5);
+        } while (dowhiledata > 5);
 
         // while (data<5) {
         //     console.log("inside while",data);
         //     data++
         // }
-        
+
     </script>
 
 </body>

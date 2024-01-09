@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="slider">
+        <div class="img"><img src="nature_3.jpg" alt=""></div>
+        <div class="img"><img src="nature_4.jpg" alt=""></div>
+        <div class="img"><img src="nature_5.jpg" alt=""></div>
+        <div class="img"><img src="nature_1.jpg" alt=""></div>
+        <div class="img"><img src="nature_2.jpg" alt=""></div>
+    </div>
+
+    <div class="button">
+        <button id="click">Click ME </button> 
+    </div>
+
+    <script>
+
+
+        counter = 0;
+
+        function recure() {
+
+            img = document.getElementsByClassName("img")
+            for (i = 0; i < img.length; i++) {
+                // console.log(i)
+                img[i].style.display = "none";
+            }
+
+
+
+            if (counter >= img.length) {
+                counter = 0;
+            }
+            console.log(counter);
+            img[counter].style.display = "block";
+            counter++
+            
+
+        }
+
+        recure()
+        button = document.getElementById("click").addEventListener("click", () => {
+                
+                recure()
+        })
+
+    </script>
+</body>
+
+</html>
