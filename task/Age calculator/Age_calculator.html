@@ -62,21 +62,20 @@
 
         }
 
+        let result = document.createElement("h2");
+        document.getElementById("ans").appendChild(result);
         function calc()
         {
             
             event.preventDefault()
 
-            let result = document.createElement("h2");
-            document.getElementById("ans").appendChild(result);
-            console.log("helo")
             var userdate = new Date(document.getElementById("dob").value);
            
             let newdate=today.getDate()-userdate.getDate();
             let newmonth=(today.getMonth() + 1)-(userdate.getMonth() + 1);
             let newyear=today.getFullYear()-userdate.getFullYear();
 
-            result.innerText="Your Age  : "+newyear+" Year "+newmonth+" Month "+Math.abs(newdate)+" Days ";
+            result.innerText= " Your Age  : "+newyear+" Year "+newmonth+" Month "+Math.abs(newdate)+" Days ";
 
         }
 
