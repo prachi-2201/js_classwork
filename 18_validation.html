@@ -1,11 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .form {
+            width: 600px;
+            margin: 0 auto;
+            margin-top: 50px;
+            font-size: 18px;
+        }
+
+        .row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        input[type="text"] {
+            padding: 2px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            background-color: rgb(54, 54, 220);
+            color: white;
+            font-size: 16px;
+            margin: 0 auto;
+            border-radius: 10px
+        }
+
+        span {
+            color: red;
+            font-size: 11px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h1>General Admission Registation</h1>
+    <div class="form">
+        <form action="">
+            <div class="row">
+                <label for="name">Name : </label>
+                <input type="text" onblur="nameError()" name="" id="fname">
+                <input type="text" onblur="nameError()" name="" id="lname">
+                <span id="nerror"></span>
+            </div>
+            <div class="row">
+                <label for="email">Email : </label>
+                <input type="text" onkeyup="emailError()" name="" id="email">
+                <span id="Eerror"></span>
+            </div>
+            <div class="row">
+                <label for="gender">Gender : </label>
+                <input type="radio" name="gender" class="gen" value="male" id="">Male
+                <input type="radio" name="gender" class="gen" value="female" id="">Female
+                <span id="Gerror"></span>
+            </div>
+            <div class="row">
+                <label for="phone">Phone :</label>
+                <input type="tel" name="" id="">
+            </div>
+            <div class="row">
+                <label for="contact">Emergency Contact :</label>
+                <input type="tel" name="" id="">
+            </div>
+            <div class="row">
+                <label for="parking">Do you want parking? :</label>
+                <input type="radio" name="park" id="">Yes
+                <input type="radio" name="park" id="">No
+            </div>
+            <div class="row">
+                <label for="event">What events will you attend? : </label>
+                <input type="checkbox" name="event" id="">Awards Gala Dinner
+                <input type="checkbox" name="event" id="">Luncheon
+                <input type="checkbox" name="event" id="">Town Hall
+            </div>
+            <div class="row">
+                <button onclick="check()">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        
+        function nameError() {
+            event.preventDefault();
+            var Fname = document.getElementById("fname").value
+            var Lname = document.getElementById("lname").value
+            var error = document.getElementById("nerror")
+            if (Fname == "" || Fname == null || Lname == "" || Lname == null) {
+                error.innerText = "*Please enter name fields";
+            }
+            else {
+                error.innerText = "";
+            }
+        }
+        function emailError() {
+            var e = document.getElementById("email").value;
+            var error = document.getElementById("Eerror")
+            var regex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+            // var result = e.match(regex)
+            // console.log(result)
+            if (e == "" || e == null || !e.match(regex)) {
+                error.innerText = "*Please enter valid email";
+            }
+            else {
+                error.innerText = "";
+            }
+        }
+        var error = document.getElementById("Gerror")
+        function check()
+        {
+            event.preventDefault()
+            var g=document.getElementsByClassName("gen");
+
+                if(!g[0].checked && !g[1].checked)
+                {
+                    error.innerText = "*Please select gender";
+                }
+                else{
+                    error.innerText = "";
+                }
+            
+        }
+
+    </script>
 </body>
+
 </html>

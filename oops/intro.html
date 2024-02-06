@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h4 id="ans"></h4>
+
+    <script>
+        class human {
+            name = ""
+            height = 0
+            weight = 0
+            bmi = 0
+
+            walk = () => {
+                console.log("i am walking " + this.name)
+            }
+            calcbmi = () => {
+                this.bmi = this.weight / (this.height * this.height)
+                console.log(this.bmi)
+            }
+        }
+        const p = document.getElementById("ans");
+        const prachi = new human()
+        prachi.name = "Prachi"
+        prachi.height = 5.2
+        prachi.weight = 55
+        prachi.calcbmi()
+        prachi.walk();
+
+        p.innerText = `Details of prachi   \n${prachi.name} \n${prachi.height} \n${prachi.weight} \n`
+    </script>
+</body>
+
+</html>

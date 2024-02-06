@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const humans = [
+            { name: "MNO", age: "21" },
+            { name: "ABC", age: "27" },
+            { name: "XYZ", age: "11" },
+            { name: "BMW", age: "10" },
+        ];
+        function checkAdult(human) {
+            return human.age >= 18;
+        }
+        // console.log(humans.filter(checkAdult))
+        var adult=humans.filter(checkAdult)
+        
+        for(i=0;i<adult.length;i++)
+        {
+            console.log(adult[i].name)
+        }
+
+
+    </script>
+</body>
+
+</html>
